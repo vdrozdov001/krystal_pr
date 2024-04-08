@@ -1,0 +1,105 @@
+.header 
+    &__inner    
+        display: flex
+        margin-top: 23px
+        align-items: center
+    &__btn-catalog 
+        position: relative
+        top: -7px
+    &__catalog 
+        border: none
+        background-color: #A16341  
+        color: #fff
+        padding: 13px 20px 14px 51px
+        font-family: "Inter", sans-serif
+        line-height: 17.5px
+        display: block 
+        border-radius: 45px
+        margin-left: 39px
+        cursor: pointer
+    &__authorization 
+        display: block
+        padding: 13px 20px 14px 51px
+        margin-left: auto
+        font-family: "Inter", sans-serif
+        border: 1px solid  #DBE1ED
+        background-color: transparent 
+        border-radius: 45px
+        position: relative
+        cursor: pointer
+        transition: .3s all ease
+        line-height: 17.5px
+        &::before 
+            content: ""
+            position: absolute 
+            background-image: url(/src/images/user-header.svg)
+            width: 24px 
+            height: 24px
+            left: 16px
+            top: 10px
+        &:hover 
+            border: 1px solid  #b0bdd7
+
+.span-box 
+    width: 18px 
+    height: 12px
+    position: relative
+    left: 59px
+    top: 27px
+    span 
+        position: absolute
+        display: block
+        height: 2px 
+        background-color: #fff 
+        width: 18px
+        &:nth-child(2) 
+            top: 5px
+        &:nth-child(3) 
+            top: 10px
+                
+.header-nav
+    &__list 
+        margin-left: 33px
+    &__item
+        display: inline-block
+        transition: .2s all ease
+        & + & 
+            margin-left: 20px
+        &:hover 
+            opacity: 0.8
+
+
+@media( max-width: 1045px)
+    .header 
+        &__catalog 
+            margin-left: 20px
+        &__btn-catalog 
+            order: 1
+
+    .header-nav
+        &__list
+            display: none
+
+    .span-box 
+        left: 39px
+
+@media( max-width: 540px)
+    .header 
+        &__catalog 
+            padding: 15px 12px
+            width: 41px 
+            height: 41px
+            border: 1px solid #A16341
+            background-color: #FBECDA
+        &__authorization 
+            border: none
+            &::before 
+                top: 0px
+                left: auto
+            &:hover 
+                border: none
+
+    .span-box 
+        left: 32px
+        span 
+            background-color: #A16341
