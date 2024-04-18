@@ -11,12 +11,16 @@ body
     font-size: 14px
     color: #3D4249
     font-weight: 500
+    // overflow: hidden
+    background-color: #F8F8F8
     
 
 h1 
     font-size: 44px
     font-family: "Playfair Display", serif
     font-weight: 800
+    color: #191919
+
 
 h2 
     font-size: 22px 
@@ -27,13 +31,59 @@ h3
     font-family: "Inter", sans-serif
     font-size: 14px
     font-weight: 500
+    color: #191919
+    line-height: 125%
 
 a 
     color: inherit
     text-decoration: none
 
 .container 
-    max-width: 1230px 
+    max-width: 1220px 
     margin: 0px auto
-    padding: 0px 15px
+    padding: 0px 10px
 
+.container-full 
+    max-width: 1440px
+    overflow: hidden
+    margin: 0px auto
+
+.page-content 
+    margin-top: 71px    
+
+.page-content__inner 
+    display: flex 
+
+.popup 
+    position: fixed
+    width: 100% 
+    height: 100vh
+    background-color: rgba(0,0,0,0.8)
+    top: 0px 
+    left: 0px
+    opacity: 0
+    visibility: hidden
+    z-index: 3
+    &:target 
+        opacity: 1
+        visibility: visible
+    &__body 
+        min-height: 100vh
+        display: flex 
+        justify-content: center
+        align-items: center
+        padding: 0px 10px
+
+.swiper-container 
+    z-index: 0
+
+
+// adapt
+
+@media (max-width: 1160px)  
+    .page-content 
+        margin-top: 46px
+
+@media (max-width: 800px) 
+    h1 
+        font-size: 28px

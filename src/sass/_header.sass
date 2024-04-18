@@ -1,11 +1,13 @@
 .header 
+    background-color: #fff
     &__inner    
         display: flex
-        margin-top: 23px
+        padding: 23px 0px
         align-items: center
     &__btn-catalog 
         position: relative
         top: -7px
+        z-index: 10
     &__catalog 
         border: none
         background-color: #A16341  
@@ -46,6 +48,7 @@
     position: relative
     left: 59px
     top: 27px
+    cursor: pointer
     span 
         position: absolute
         display: block
@@ -56,6 +59,7 @@
             top: 5px
         &:nth-child(3) 
             top: 10px
+            transition: .2s all ease
                 
 .header-nav
     &__list 
@@ -69,8 +73,25 @@
             opacity: 0.8
 
 
+.header__btn-catalog.active
+    .span-box 
+        span:nth-child(1) 
+            transform: rotate(45deg)
+            top: 5px
+        span:nth-child(2) 
+            transform: rotate(45deg)
+        span:nth-child(3) 
+            transform: rotate(-45deg)
+            top: 5px 
+
+
 @media( max-width: 1045px)
     .header 
+        position: fixed 
+        z-index: 3
+        width: 100%
+        top: 0px
+        box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5)
         &__catalog 
             margin-left: 20px
         &__btn-catalog 

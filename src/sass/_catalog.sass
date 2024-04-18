@@ -1,0 +1,138 @@
+.catalog 
+    background-color: #fff 
+    margin-left: 20px
+    border-radius: 16px
+    padding: 30px
+    max-width: 895px
+    width: 100%
+    &__header 
+        display: flex 
+        justify-content: space-between
+    &__sorting 
+        color: #97A1B0 
+        line-height: 125%
+        padding-right: 30px
+        position: relative
+        &::after 
+            position: absolute
+            content: "" 
+            width: 13px 
+            height: 8px 
+            background-image: url(/src/images/catalog-sorting-decor.svg)
+            background-repeat: no-repeat
+            right: 0px
+            top: 6px
+    &__menu-mobile
+        display: none
+        position: relative
+        padding-left: 32px
+        cursor: pointer
+        &::before 
+            position: absolute 
+            content: "" 
+            background-image: url(/src/images/catalog-menu-mobile.svg)
+            width: 22px
+            height: 22px
+            left: 0px
+            top: -4px
+    &__box 
+        margin-top: 7px
+        display: flex 
+        justify-content: space-between 
+        flex-wrap: wrap
+
+.catalog-item  
+    background-color: #F3F4F5
+    border-radius: 14px
+    max-width: 200px
+    max-height: 303px
+    color: #A8B4C5
+    overflow: hidden
+    position: relative
+    margin-top: 21px
+    &__content 
+        padding: 16px
+        font-size: 12px
+        line-height: 125%
+    &__img 
+        margin-top: 15px
+        max-height: 125px
+        img 
+            object-fit: cover
+    &__weight 
+        display: flex
+        justify-content: space-between
+        padding-bottom: 13px 
+        border-bottom:  1px solid #C6D1E0
+        margin-top: 27px
+        span 
+            display: block 
+    &__name 
+        display: flex 
+        justify-content: space-between
+        margin-top: 15px
+        span 
+            display: block
+            font-weight: 600
+            span 
+                display: inline-block
+    &__description 
+        margin-top: 13px 
+    &__basket-box
+        position: absolute
+        bottom: 0px 
+        width: 100%
+        height: 0px
+        transition: .3s all ease
+    &__basket 
+        display: block
+        border: none
+        text-align: center 
+        color: #fff
+        background-color: #A16341
+        position: relative
+        padding: 13px 0px 14px 35px
+        line-height: 125%
+        cursor: pointer
+        width: 100%
+        &::before 
+            position: absolute
+            content: "" 
+            width: 24px
+            height: 24px
+            top: 8px
+            left: 49px
+            background-image: url(/src/images/catalog-basket-item.svg)
+    &:hover 
+        .catalog-item__basket-box 
+            height: 43px
+
+@media (max-width: 1160px)
+    .catalog 
+        margin: 0px auto
+        background-color: transparent 
+        &__header
+            flex-direction: column
+        &__title 
+            padding-bottom: 24px
+            border-bottom: 1px solid #C6D1E0
+        &__sorting 
+            max-width: 160px
+            display: flex
+            justify-content: space-between
+        &__mobile-inner 
+            margin-top: 20px
+            display: flex 
+            justify-content: space-between
+        &__menu-mobile 
+            display: block
+            color: #97A1B0
+            
+@media (max-width: 910px)
+    .catalog 
+        padding: 0px
+    .catalog-item 
+        max-width: 172px
+        background-color: #FFFFFF
+        &__content 
+            font-size: 10px

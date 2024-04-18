@@ -1,0 +1,93 @@
+.slider 
+    margin-top: 23px
+    &__inner
+        position: relative
+
+
+.slider-item 
+    background-color: #FFEBE0
+    max-width: 1200px
+    margin: auto
+    border-radius: 16px
+    &__content 
+        padding: 59px 0px 0px 47px
+        background-image: url(/src/images/slider-content-decor.svg)
+        background-repeat: no-repeat
+        background-position: 94px 40px
+    &__title 
+        max-width: 350px
+    &__description 
+        margin-top: 52px
+        max-width: 420px
+        padding-bottom: 66px
+        line-height: 125%
+
+
+// swiper options
+
+.swiper-container 
+    position: relative
+
+.swiper-button-next
+    width: 40px
+    height: 40px
+    background-color: #fff
+    border-radius: 50%
+    right: -80px
+    &::after    
+        font-size: 8px
+        color: #14181F
+        border-radius: 2px
+
+.swiper-button-prev
+    width: 40px
+    height: 40px
+    background-color: #fff
+    border-radius: 50%
+    left: -80px
+    &::after    
+        font-size: 8px
+        color: #14181F
+        border-radius: 2px
+        
+.swiper-pagination 
+    bottom: -40px !important
+
+.swiper-pagination-bullet 
+    width: 12px 
+    height: 12px 
+    background-color: transparent 
+    border: 1.5px solid #C1CAD8
+    border-radius: 50%
+    margin: 0px 6px !important
+
+.swiper-pagination-bullet-active  
+    position: relative
+    &::before 
+        content: ""
+        position: absolute
+        width: 5px
+        height: 5px
+        border-radius: 50% 
+        background-color: #C1CAD8
+        left: 2px 
+        top: 2px
+
+@media (max-width: 1370px)
+    .swiper-button-prev 
+        display: none
+    .swiper-button-next 
+        display: none
+
+@media (max-width: 1045px) 
+    .slider 
+        margin-top: 123px
+
+@media (max-width: 800px)
+    .slider-item 
+        &__content
+            padding: 18px
+            background-image: url(/src/images/slider-mobile-content-decor.svg)
+        &__description 
+            font-size: 12px
+            margin-top: 24px
