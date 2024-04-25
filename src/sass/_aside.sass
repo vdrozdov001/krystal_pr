@@ -28,10 +28,18 @@
             margin-top: 18px
     &__footer 
         padding-left: 15px
-        position: absolute
-        bottom: 23px
+        display: flex 
+        flex-direction: column 
+        height: 61% 
+        justify-content: end
 
-@media (max-width: 1160px ) 
+.aside__item.active 
+    background-color: #fff
+    border-radius: 10px 
+    padding: 16px 15px
+    color: #191919
+
+@media (max-width: 1160px) 
     .aside 
         display: none
         

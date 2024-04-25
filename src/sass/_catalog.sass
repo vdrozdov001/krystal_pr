@@ -11,8 +11,13 @@
     &__sorting 
         color: #97A1B0 
         line-height: 125%
-        padding-right: 30px
         position: relative
+        border: none 
+        background-color: transparent
+        outline: none
+        font-family: "Inter", sans-serif
+        cursor: pointer
+        font-weight: 500
         &::after 
             position: absolute
             content: "" 
@@ -38,18 +43,19 @@
     &__box 
         margin-top: 7px
         display: flex 
-        justify-content: space-between 
+        justify-content: center
         flex-wrap: wrap
+        margin-left: -13px
 
 .catalog-item  
     background-color: #F3F4F5
     border-radius: 14px
-    max-width: 200px
+    width: 200px
     max-height: 303px
     color: #A8B4C5
     overflow: hidden
     position: relative
-    margin-top: 21px
+    margin: 21px 0px 0px 12px
     &__content 
         padding: 16px
         font-size: 12px
@@ -116,10 +122,6 @@
         &__title 
             padding-bottom: 24px
             border-bottom: 1px solid #C6D1E0
-        &__sorting 
-            max-width: 160px
-            display: flex
-            justify-content: space-between
         &__mobile-inner 
             margin-top: 20px
             display: flex 
@@ -132,7 +134,27 @@
     .catalog 
         padding: 0px
     .catalog-item 
-        max-width: 172px
+        width: 30%
         background-color: #FFFFFF
         &__content 
             font-size: 10px
+
+@media (max-width: 600px)
+    .catalog-item 
+        width: 45%
+
+@media (max-width: 500px)
+    .catalog-item 
+        &__name 
+            padding-bottom: 10px
+        &__basket-box 
+            height: 43px
+        &:nth-child(19) 
+            display: none
+        &:nth-child(20) 
+            display: none
+            
+
+@media (max-width: 390px) 
+    .catalog-item 
+        width: 96%

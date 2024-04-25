@@ -11,8 +11,10 @@ body
     font-size: 14px
     color: #3D4249
     font-weight: 500
-    // overflow: hidden
     background-color: #F8F8F8
+
+body.over 
+    overflow: hidden
     
 
 h1 
@@ -49,7 +51,7 @@ a
     margin: 0px auto
 
 .page-content 
-    margin-top: 71px    
+    margin-top: 31px    
 
 .page-content__inner 
     display: flex 
@@ -64,15 +66,16 @@ a
     opacity: 0
     visibility: hidden
     z-index: 3
-    &:target 
-        opacity: 1
-        visibility: visible
     &__body 
         min-height: 100vh
         display: flex 
         justify-content: center
         align-items: center
         padding: 0px 10px
+
+.popup.active 
+    opacity: 1
+    visibility: visible
 
 .swiper-container 
     z-index: 0

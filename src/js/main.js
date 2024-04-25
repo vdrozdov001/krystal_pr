@@ -6,7 +6,11 @@ import '/src/sass/style.sass'
 const headerCatalog = document.querySelector('.header-catalogJS'),
       headerAuthorization = document.querySelector('.header-authorizationJS'), 
       burger = document.querySelector('.menu__box'),
-      headerCatalogBox = document.querySelector('.header__btn-catalog');
+      headerCatalogBox = document.querySelector('.header__btn-catalog'), 
+      body = document.querySelector('body'), 
+      popup = document.getElementById('popup'), 
+      menuMobileOpenBtn = document.querySelector('.catalog__menu-mobile'), 
+      menuMobileClosedBtn = document.querySelector('.mobile-menu__closed');
 
 
       function docWidth () {
@@ -52,21 +56,62 @@ new Swiper('.swiper-container', {
 function burgerOpenfn () { 
   headerCatalogBox.classList.toggle('active');
   burger.classList.toggle('active');
+  body.classList.toggle('over');
 }
+
+// url add data-key
 
 document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.link-js');
   
   links.forEach(function(link) {
     link.addEventListener('click', function(event) {
-      
       event.preventDefault();
       
       let key = this.getAttribute('data-key');
+      let currentUrl = window.location.href;
       
-      let newUrl = window.location.href + '?key=' + encodeURIComponent(key);
-  
-      window.location.href = newUrl;
+      if (currentUrl.includes('?key=')) {
+        let regex = /(\?|&)key=([^&]*)(&|$)/;
+        let newUrl = currentUrl.replace(regex, '$1key=' + encodeURIComponent(key) + '$3');
+        window.location.href = newUrl;
+      } else {
+        let newUrl = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'key=' + encodeURIComponent(key);
+        window.location.href = newUrl;
+      }
+      
+      event.stopPropagation();
+      event.stopImmediatePropagation();
     });
+
+    // Получаем текущий ключ из URL
+    const currentKey = new URLSearchParams(window.location.search).get('key');
+
+    // Проверяем, есть ли ключ элемента в URL и добавляем класс active
+    if (link.getAttribute('data-key') === currentKey) {
+      link.classList.add('active');
+    }
   });
 });
+
+
+
+
+// popup
+
+function popupFN () { 
+  if (popup.classList.contains("active")) { 
+    popup.classList.remove('active');
+    body.classList.remove('over');
+  } else { 
+    popup.classList.add('active');
+    body.classList.add('over');
+  }
+
+  menuMobileClosedBtn.addEventListener("click", ()=> { 
+    popup.classList.remove('active');
+    body.classList.remove('over');
+  })
+}
+
+menuMobileOpenBtn.addEventListener('click', popupFN);
