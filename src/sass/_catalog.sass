@@ -18,7 +18,11 @@
         font-family: "Inter", sans-serif
         cursor: pointer
         font-weight: 500
-        &::after 
+        appearance: none
+        padding-right: 20px
+    &__sorting-inner 
+        position: relative
+        &:after 
             position: absolute
             content: "" 
             width: 13px 
@@ -26,7 +30,7 @@
             background-image: url(/src/images/catalog-sorting-decor.svg)
             background-repeat: no-repeat
             right: 0px
-            top: 6px
+            top: 5px
     &__menu-mobile
         display: none
         position: relative
@@ -147,14 +151,16 @@
     .catalog-item 
         &__name 
             padding-bottom: 10px
-        &__basket-box 
-            height: 43px
         &:nth-child(19) 
             display: none
         &:nth-child(20) 
             display: none
             
-
 @media (max-width: 390px) 
     .catalog-item 
         width: 96%
+
+@media (hover: none) 
+    .catalog-item
+        &__basket-box 
+            height: 43px

@@ -84,10 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
       event.stopImmediatePropagation();
     });
 
-    // Получаем текущий ключ из URL
     const currentKey = new URLSearchParams(window.location.search).get('key');
 
-    // Проверяем, есть ли ключ элемента в URL и добавляем класс active
     if (link.getAttribute('data-key') === currentKey) {
       link.classList.add('active');
     }

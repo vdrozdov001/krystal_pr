@@ -194,11 +194,13 @@
                 <div class="catalog__header">
                   <h2 class="catalog__title">Каталог</h2>
                   <div class="catalog__mobile-inner">
-                    <select class="catalog__sorting">
-                      <option value="">Спочатку дешевше</option>
-                      <option value="">Спочатку дорожче</option>
-                      <option value="">За датою додавання</option>
-                    </select>
+                    <div class="catalog__sorting-inner">
+                      <select class="catalog__sorting">
+                        <option value="">Спочатку дешевше</option>
+                        <option value="">Спочатку дорожче</option>
+                        <option value="">За датою додавання</option>
+                      </select>
+                    </div>
                     <a class="catalog__menu-mobile" href="#popup">Меню</a>
                   </div>
                 </div>
@@ -601,6 +603,6 @@
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" src="/src/js/main.js"></script>
+    <script defer type="module" src="/src/js/main.js"></script>
   </body>
 </html>
