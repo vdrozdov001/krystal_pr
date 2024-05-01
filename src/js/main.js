@@ -3,6 +3,7 @@
 // imports
 import '/src/sass/style.sass'
 
+// Variables
 const headerCatalog = document.querySelector('.header-catalogJS'),
       headerAuthorization = document.querySelector('.header-authorizationJS'), 
       burger = document.querySelector('.menu__box'),
@@ -10,8 +11,8 @@ const headerCatalog = document.querySelector('.header-catalogJS'),
       body = document.querySelector('body'), 
       popup = document.getElementById('popup'), 
       menuMobileOpenBtn = document.querySelector('.catalog__menu-mobile'), 
-      menuMobileClosedBtn = document.querySelector('.mobile-menu__closed');
-
+      menuMobileClosedBtn = document.querySelector('.mobile-menu__closed'), 
+      catalogSorting = document.querySelector('.Catalog__sorting');
 
       function docWidth () {
       const screen = window.innerWidth;
@@ -49,6 +50,10 @@ new Swiper('.swiper-container', {
   spaceBetween: '20', 
   loop: true,
   initialSlide: 2,
+  autoplay: { 
+    delay: 3000,
+  },
+  speed: 600,
 });
 
 // burger open 
@@ -63,53 +68,104 @@ function burgerOpenfn () {
 
 document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.link-js');
+
+  function setActiveItem() { 
+    let params = new URLSearchParams(document.location.search);
+    let curentFilter = params.get("filter");
+    if (!curentFilter) return;
+    const element = [...links].find((element) => { 
+      const curentKey = element.dataset.key; 
+      return curentKey === curentFilter;
+    })
+    element.classList.add('active');
+  }
+  setActiveItem();
   
   links.forEach(function(link) {
     link.addEventListener('click', function(event) {
-      event.preventDefault();
       
-      let key = this.getAttribute('data-key');
+      let filter = this.getAttribute('data-key');
       let currentUrl = window.location.href;
       
-      if (currentUrl.includes('?key=')) {
-        let regex = /(\?|&)key=([^&]*)(&|$)/;
-        let newUrl = currentUrl.replace(regex, '$1key=' + encodeURIComponent(key) + '$3');
-        window.location.href = newUrl;
-      } else {
-        let newUrl = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'key=' + encodeURIComponent(key);
-        window.location.href = newUrl;
-      }
+      const url = new URL(location);
+      url.searchParams.set("filter", filter);
+      history.replaceState({}, "", url);
       
-      event.stopPropagation();
-      event.stopImmediatePropagation();
+      
+       
+      
+      links.forEach(function(link) { 
+        link.classList.remove('active');
+      });
+      
+      
+      this.classList.add('active'); 
+ 
+      event.stopPropagation(); 
+      event.stopImmediatePropagation(); 
     });
-
-    const currentKey = new URLSearchParams(window.location.search).get('key');
-
-    if (link.getAttribute('data-key') === currentKey) {
-      link.classList.add('active');
-    }
   });
+}); 
+
+
+// sorting add URl 
+
+
+document.querySelector('.catalog__sorting').addEventListener('change', function() {
+
+  var selectedValue = this.value;
+
+
+  updateQueryStringParameter('sort', selectedValue);
+});
+
+
+function updateQueryStringParameter(key, value) {
+  var currentUrl = window.location.href;
+  var url = new URL(currentUrl);
+  url.searchParams.set(key, value);
+
+  history.replaceState(null, null, url);
+}
+
+
+
+
+// mobile oriented popup 
+
+
+window.addEventListener("resize", function() {
+
+  const menuContentBox = document.querySelector('.mobile-box')
+  if (window.innerWidth > window.innerHeight) {
+      menuContentBox.classList.add('horizont')
+  } else {
+    menuContentBox.classList.remove('horizont')
+  }
 });
 
 
 
 
-// popup
 
+
+
+
+// popup 
+ 
 function popupFN () { 
   if (popup.classList.contains("active")) { 
-    popup.classList.remove('active');
-    body.classList.remove('over');
+    popup.classList.remove('active'); 
+    body.classList.remove('over'); 
   } else { 
-    popup.classList.add('active');
-    body.classList.add('over');
-  }
+    popup.classList.add('active'); 
+    body.classList.add('over'); 
+  } 
 
-  menuMobileClosedBtn.addEventListener("click", ()=> { 
-    popup.classList.remove('active');
-    body.classList.remove('over');
-  })
-}
+  menuMobileClosedBtn.addEventListener("click", ()=> {  
+    popup.classList.remove('active'); 
+    body.classList.remove('over'); 
+  }) 
+} 
 
 menuMobileOpenBtn.addEventListener('click', popupFN);
