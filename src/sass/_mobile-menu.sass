@@ -45,3 +45,17 @@
 .mobile-menu.horizont 
     height: 250px
     overflow: scroll
+
+
+.mobile-box__list-item.active
+    color: #191919
+    position: relative
+    &::before 
+        position: absolute
+        content: ""
+        width: 6px
+        height: 6px 
+        background-color: #000 
+        border-radius: 50%
+        top: 5px
+        left: -15px
