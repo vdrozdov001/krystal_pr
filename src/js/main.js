@@ -136,7 +136,7 @@ function updateQueryStringParameter(key, value) {
 
 window.addEventListener("resize", function() {
 
-  const menuContentBox = document.querySelector('.mobile-box')
+  const menuContentBox = document.querySelector('.mobile-menu')
   if (window.innerWidth > window.innerHeight) {
       menuContentBox.classList.add('horizont')
   } else {
