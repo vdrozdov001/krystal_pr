@@ -2,6 +2,7 @@
 
 // imports
 import '/src/sass/style.sass'
+import mixitup from 'mixitup'
 
 // Variables
 const headerCatalog = document.querySelector('.header-catalogJS'),
@@ -12,27 +13,33 @@ const headerCatalog = document.querySelector('.header-catalogJS'),
       popup = document.getElementById('popup'), 
       menuMobileOpenBtn = document.querySelector('.catalog__menu-mobile'), 
       menuMobileClosedBtn = document.querySelector('.mobile-menu__closed'), 
-      catalogSorting = document.querySelector('.Catalog__sorting');
+      catalogSorting = document.querySelector('.Catalog__sorting'),
+      header = document.querySelector('.header').offsetHeight,
+      mixer = mixitup('.js-wrapper-card'), 
+      asideSorting = document.querySelectorAll('.prod-sorting-js'), 
+      mobileMenuItem = document.querySelectorAll('.mobile-box__list-item');
 
-      function docWidth () {
-      const screen = window.innerWidth;
-      if (screen < 540) { 
-        headerCatalog.textContent = '';
-        headerAuthorization.textContent = '';
-      } else { 
-        headerCatalog.textContent = 'Каталог';
-        headerAuthorization.textContent = 'Особистий Кабінет';
-      }
+// adapt width s
 
-      if (screen < 1045) { 
-        headerCatalogBox.addEventListener('click', burgerOpenfn);
-      } else { 
-        return;
-      }
-    }
+function docWidth () {
+const screen = window.innerWidth;
+if (screen < 540) { 
+  headerCatalog.textContent = '';
+  headerAuthorization.textContent = '';
+} else { 
+  headerCatalog.textContent = 'Каталог';
+  headerAuthorization.textContent = 'Особистий Кабінет';
+}
+
+if (screen < 1045) { 
+  headerCatalogBox.addEventListener('click', burgerOpenfn);
+} else { 
+  return;
+}
+ }
 
 window.onload = docWidth;
-window.onresize = docWidth; 
+window.onresize = docWidth;
 
 
 // swiper 
@@ -68,6 +75,7 @@ function burgerOpenfn () {
 
 document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.link-js');
+  
 
   function setActiveItem() { 
     let params = new URLSearchParams(document.location.search);
@@ -115,6 +123,9 @@ document.querySelector('.catalog__sorting').addEventListener('change', function(
 
   var selectedValue = this.value;
 
+  const sortValue = selectedValue === "date" ?  'published-date:asc' : `default:${selectedValue}`;
+  mixer.sort(!!selectedValue ? sortValue : 'default') 
+
 
   updateQueryStringParameter('sort', selectedValue);
 });
@@ -127,6 +138,18 @@ function updateQueryStringParameter(key, value) {
 
   history.replaceState(null, null, url);
 }
+
+
+
+// asdie sorting 
+
+for(let index = 0; index < asideSorting.length; index++ ) { 
+  asideSorting[index].addEventListener('click', ()=> { 
+    
+  })
+}
+
+
 
 
 
@@ -145,10 +168,45 @@ window.addEventListener("resize", function() {
 });
 
 
+// header scroll down 
 
 
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
 
 
+window.addEventListener('scroll', function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = window.scrollY || window.pageYOffset;
+    
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    if (st > lastScrollTop && st > header){
+        // Scroll Down
+        document.querySelector('header').classList.remove('nav-down');
+        document.querySelector('header').classList.add('nav-up');
+    } else {
+        // Scroll Up
+        if(st + window.innerHeight < document.documentElement.scrollHeight) {
+            document.querySelector('header').classList.remove('nav-up');
+            document.querySelector('header').classList.add('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
 
 
 // popup 
@@ -168,4 +226,36 @@ function popupFN () {
   }) 
 } 
 
+for(let i = 0; i < mobileMenuItem.length; i++) { 
+  mobileMenuItem[i].addEventListener('click', popupFN);
+}
 menuMobileOpenBtn.addEventListener('click', popupFN);
+
+
+// fix kunkaLabs
+
+// const observer = new MutationObserver((mutationsList, observer) => {
+
+//   for (let mutation of mutationsList) {
+//       // Проверяем, были ли изменены атрибуты стилей
+//       if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+//           // Получаем измененный элемент
+//           const targetElement = mutation.target;
+//           // Получаем текущее значение свойства opacity
+//           const opacityValue = targetElement.style.opacity;
+
+//           // Если opacity установлено и не равно "1", то устанавливаем display: none
+//           if (opacityValue && opacityValue !== "1") {
+//               targetElement.style.display = 'none';
+//           }
+//       }
+//   }
+// });
+ 
+// // Получаем все элементы, которые вы хотите отслеживать 
+// const elements = document.querySelectorAll('.catalog-item'); 
+
+// // Настраиваем наблюдение за изменениями в атрибутах стилей каждого элемента 
+// elements.forEach(element => { 
+//   observer.observe(element, { attributes: true, attributeFilter: ['style'] });
+// });

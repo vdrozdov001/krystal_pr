@@ -5,6 +5,7 @@
     padding: 30px
     max-width: 895px
     width: 100%
+    min-height: 1710px
     &__header 
         display: flex 
         justify-content: space-between
@@ -123,6 +124,7 @@
     .catalog 
         margin: 0px auto
         background-color: transparent 
+        min-height: 0px
         &__header
             flex-direction: column
         &__title 
@@ -150,6 +152,8 @@
         width: 45%
 
 @media (max-width: 500px)
+    .catalog__box 
+        display: block !important
     .catalog-item 
         &__name 
             padding-bottom: 10px

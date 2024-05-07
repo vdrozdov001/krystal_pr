@@ -1,5 +1,6 @@
 .header 
     background-color: #fff
+    transition: top 0.3s ease-in-out
     &__inner    
         display: flex
         padding: 23px 0px
@@ -83,6 +84,12 @@
         span:nth-child(3) 
             transform: rotate(-45deg)
             top: 5px 
+
+
+.header.nav-up 
+    top: -102.5px 
+    box-shadow: none
+
 
 
 @media( max-width: 1045px)
