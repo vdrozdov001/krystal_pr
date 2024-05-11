@@ -17,7 +17,8 @@ const headerCatalog = document.querySelector('.header-catalogJS'),
       header = document.querySelector('.header').offsetHeight,
       mixer = mixitup('.js-wrapper-card'), 
       asideSorting = document.querySelectorAll('.prod-sorting-js'), 
-      mobileMenuItem = document.querySelectorAll('.mobile-box__list-item');
+      mobileMenuItem = document.querySelectorAll('.mobile-box__list-item'), 
+      select = document.querySelector('.catalog__sorting');
 
 // adapt width s
 
@@ -75,7 +76,6 @@ function burgerOpenfn () {
 
 document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.link-js');
-  
 
   function setActiveItem() { 
     let params = new URLSearchParams(document.location.search);
@@ -88,32 +88,55 @@ document.addEventListener('DOMContentLoaded', function() {
     element.classList.add('active');
   }
   setActiveItem();
-  
+
   links.forEach(function(link) {
     link.addEventListener('click', function(event) {
-      
       let filter = this.getAttribute('data-key');
       let currentUrl = window.location.href;
-      
       const url = new URL(location);
       url.searchParams.set("filter", filter);
       history.replaceState({}, "", url);
-      
-      
-       
-      
       links.forEach(function(link) { 
         link.classList.remove('active');
       });
-      
-      
       this.classList.add('active'); 
- 
       event.stopPropagation(); 
       event.stopImmediatePropagation(); 
     });
   });
-}); 
+
+  // Добавляем тот же скрипт для элементов в блоке с классом aside
+  const asideLinks = document.querySelectorAll('.prod-sorting-js');
+
+  function setActiveItemForAside() { 
+    let params = new URLSearchParams(document.location.search);
+    let curentFilter = params.get("filter");
+    if (!curentFilter) return;
+    const element = [...asideLinks].find((element) => { 
+      const curentKey = element.dataset.key; 
+      return curentKey === curentFilter;
+    })
+    element.classList.add('active');
+  }
+  setActiveItemForAside();
+
+  asideLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      let filter = this.getAttribute('data-key');
+      let currentUrl = window.location.href;
+      const url = new URL(location);
+      url.searchParams.set("filter", filter);
+      history.replaceState({}, "", url);
+      asideLinks.forEach(function(link) { 
+        link.classList.remove('active');
+      });
+      this.classList.add('active'); 
+      event.stopPropagation(); 
+      event.stopImmediatePropagation(); 
+    });
+  });
+});
+
 
 
 // sorting add URl 
@@ -126,6 +149,7 @@ document.querySelector('.catalog__sorting').addEventListener('change', function(
   const sortValue = selectedValue === "date" ?  'published-date:asc' : `default:${selectedValue}`;
   mixer.sort(!!selectedValue ? sortValue : 'default') 
 
+  console.log(selectedValue)
 
   updateQueryStringParameter('sort', selectedValue);
 });
@@ -143,11 +167,11 @@ function updateQueryStringParameter(key, value) {
 
 // asdie sorting 
 
-for(let index = 0; index < asideSorting.length; index++ ) { 
-  asideSorting[index].addEventListener('click', ()=> { 
+// for(let index = 0; index < asideSorting.length; index++ ) { 
+//   asideSorting[index].addEventListener('click', ()=> { 
     
-  })
-}
+//   })
+// }
 
 
 
@@ -232,30 +256,16 @@ for(let i = 0; i < mobileMenuItem.length; i++) {
 menuMobileOpenBtn.addEventListener('click', popupFN);
 
 
-// fix kunkaLabs
+// select 
 
-// const observer = new MutationObserver((mutationsList, observer) => {
 
-//   for (let mutation of mutationsList) {
-//       // Проверяем, были ли изменены атрибуты стилей
-//       if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-//           // Получаем измененный элемент
-//           const targetElement = mutation.target;
-//           // Получаем текущее значение свойства opacity
-//           const opacityValue = targetElement.style.opacity;
 
-//           // Если opacity установлено и не равно "1", то устанавливаем display: none
-//           if (opacityValue && opacityValue !== "1") {
-//               targetElement.style.display = 'none';
-//           }
-//       }
-//   }
-// });
- 
-// // Получаем все элементы, которые вы хотите отслеживать 
-// const elements = document.querySelectorAll('.catalog-item'); 
 
-// // Настраиваем наблюдение за изменениями в атрибутах стилей каждого элемента 
-// elements.forEach(element => { 
-//   observer.observe(element, { attributes: true, attributeFilter: ['style'] });
-// });
+    if (localStorage.getItem('selectedOption')) {
+      select.value = localStorage.getItem('selectedOption');
+    }
+
+    select.addEventListener('change', function() {
+
+      localStorage.setItem('selectedOption', this.value);
+    });

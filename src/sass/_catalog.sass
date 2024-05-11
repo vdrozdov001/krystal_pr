@@ -61,15 +61,15 @@
     overflow: hidden
     position: relative
     margin: 21px 0px 0px 12px
-    &__content 
+    &__content
         padding: 16px
         font-size: 12px
         line-height: 125%
-    &__img 
-        margin-top: 15px
-        max-height: 125px
+    &__img
+        padding-top: 15px
+        height: 145px
         overflow: hidden
-        img 
+        img
             object-fit: cover
             width: 100%
     &__weight 
@@ -78,8 +78,8 @@
         padding-bottom: 13px 
         border-bottom:  1px solid #C6D1E0
         margin-top: 27px
-        span 
-            display: block 
+        span
+            display: block
     &__name 
         display: flex 
         justify-content: space-between
@@ -120,6 +120,8 @@
         .catalog-item__basket-box 
             height: 43px
 
+
+
 @media (max-width: 1160px)
     .catalog 
         margin: 0px auto
@@ -138,7 +140,7 @@
             display: block
             color: #97A1B0
             
-@media (max-width: 910px)
+@media (max-width: 915px)
     .catalog 
         padding: 0px
     .catalog-item 
@@ -146,6 +148,9 @@
         background-color: #FFFFFF
         &__content 
             font-size: 10px
+        &__img 
+            img  
+                height: 155px
 
 @media (max-width: 600px)
     .catalog-item 
@@ -156,13 +161,26 @@
         &__name 
             padding-bottom: 10px
         &:nth-child(19) 
-            display: none
+            opacity: 0
+            width: 0px
+            height: 0px
         &:nth-child(20) 
-            display: none
+            opacity: 0
+            width: 0px
+            height: 0px
+    
+
             
 @media (max-width: 390px) 
     .catalog-item 
         width: 96%
+        &__img 
+            display: flex 
+            justify-content: center
+            height: 185px
+            img 
+                max-width: 80%
+                height: 185px
 
 @media (hover: none) 
     .catalog-item
