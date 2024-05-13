@@ -155,7 +155,6 @@ function updateQueryStringParameter(key, value) {
   var currentUrl = window.location.href;
   var url = new URL(currentUrl);
   url.searchParams.set(key, value);
-
   history.replaceState(null, null, url);
 }
 
@@ -167,7 +166,9 @@ function setInitialFilter () {
   const sortValue = sort === "date" ?  'published-date:asc' : `order:${sort}`;
   mixer.sort(sortValue);
   mixer.filter(`.${filter}`);
-  console.log(filter);
+  if (!window.location.search) { 
+    window.location.search = 'filter=all';
+  }
 }
 setInitialFilter()
 
