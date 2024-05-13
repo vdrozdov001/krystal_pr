@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Добавляем тот же скрипт для элементов в блоке с классом aside
   const asideLinks = document.querySelectorAll('.prod-sorting-js');
 
   function setActiveItemForAside() { 
@@ -146,11 +145,8 @@ document.querySelector('.catalog__sorting').addEventListener('change', function(
 
   var selectedValue = this.value;
 
-  const sortValue = selectedValue === "date" ?  'published-date:asc' : `default:${selectedValue}`;
+  const sortValue = selectedValue === "date" ?  'published-date:asc' : `order:${selectedValue}`;
   mixer.sort(!!selectedValue ? sortValue : 'default') 
-
-  console.log(selectedValue)
-
   updateQueryStringParameter('sort', selectedValue);
 });
 
@@ -162,6 +158,18 @@ function updateQueryStringParameter(key, value) {
 
   history.replaceState(null, null, url);
 }
+
+function setInitialFilter () { 
+  const params = new URLSearchParams(document.location.search);
+  const filter = params.get("filter");
+  const sort = params.get("sort")
+  // return {filter, sort};
+  const sortValue = sort === "date" ?  'published-date:asc' : `order:${sort}`;
+  mixer.sort(sortValue);
+  mixer.filter(`.${filter}`);
+  console.log(filter);
+}
+setInitialFilter()
 
 
 
@@ -256,6 +264,10 @@ for(let i = 0; i < mobileMenuItem.length; i++) {
 menuMobileOpenBtn.addEventListener('click', popupFN);
 
 
+menuMobileOpenBtn.addEventListener("click", popupFN);
+
+
+
 // select 
 
 
@@ -269,3 +281,7 @@ menuMobileOpenBtn.addEventListener('click', popupFN);
 
       localStorage.setItem('selectedOption', this.value);
     });
+
+
+ // mixitup history.replace  
+

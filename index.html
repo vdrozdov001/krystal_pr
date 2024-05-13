@@ -147,50 +147,50 @@
               <div class="aside__content">
                 <h3 class="aside__subtitle">Літнє меню</h3>
                 <ul class="aside__menu">
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-c" data-key="coofeeOrTea">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".coofeeOrTea" data-key="coofeeOrTea">
                       Кава та чай
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-b" data-key="ColdDrinks">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".ColdDrinks" data-key="ColdDrinks">
                     Прохолодні напої
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-a" data-key="Combo">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".Combo" data-key="Combo">
                     Комбо
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-a" data-key="ShokoGo">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".ShokoGo" data-key="ShokoGo">
                     Shoko Go
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-b" data-key="ConstructorSnidankov">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".ConstructorSnidankov" data-key="ConstructorSnidankov">
                     Конструктор сніданків
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-c" data-key="SnidankiAllDay">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".SnidankiAllDay" data-key="SnidankiAllDay">
                     Сніданки весь день
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter="all" data-key="Pancakes">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".Pancakes" data-key="Pancakes">
                     Млинці
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-a" data-key="PizzaOrEazzyPizza&Gelato">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".PizzaOrEazzyPizza&Gelato" data-key="PizzaOrEazzyPizza&Gelato">
                     Піца від Eazzy Pizza & Gelato
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-c" data-key="Soup">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".Soup" data-key="Soup">
                     Супи
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-a" data-key="HotDish">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".HotDish" data-key="HotDish">
                     Гарячі страви
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-b" data-key="Sandwich">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".Sandwich" data-key="Sandwich">
                     Сендвічі
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter="all" data-key="OnlyDelivery">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".OnlyDelivery" data-key="OnlyDelivery">
                     Тільки у доставці
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-a" data-key="Salad">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".Salad" data-key="Salad">
                     Салати
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter=".category-c" data-key="Dessert">
+                  <li class="aside__item link-js prod-sorting-js" data-filter=".Dessert" data-key="Dessert">
                     Десерти
                   </li>
-                  <li class="aside__item link-js prod-sorting-js" data-filter="all" data-key="AdditivesAndSauces">
-                    Добавки та соуси
+                  <li class="aside__item link-js prod-sorting-js" data-filter="all" data-key="all">
+                    Весь каталог 
                   </li>
                 </ul>
                 <div class="aside__footer">Вказано роздрібні ціни</div>
@@ -203,24 +203,24 @@
                   <div class="catalog__mobile-inner">
                     <div class="catalog__sorting-inner">
                       <select class="catalog__sorting">
-                        <option class="sort-item"  value="asc" data-filter="all">Весь список</option>
-                        <option class="sort-item"  value="asc" data-filter=".category-a" selected >Спочатку дешевше</option>
-                        <option class="sort-item"  value="desc" data-filter=".category-b">Спочатку дорожче</option>
-                        <option class="sort-item"  value="date" data-filter=".category-c">За датою додавання</option>
+                        <option class="sort-item"  value="asc">Весь список</option>
+                        <option class="sort-item"  value="asc" selected >Спочатку дешевше</option>
+                        <option class="sort-item"  value="desc" >Спочатку дорожче</option>
+                        <option class="sort-item"  value="date" >За датою додавання</option>
                       </select>
                     </div>
-                    <a class="catalog__menu-mobile" href="#popup">Меню</a>
+                    <a class="catalog__menu-mobile">Меню</a>
                   </div>
                 </div>
                 <div class="catalog__box">
 
-                  <div class="mix category-a catalog-item" data-order="1" data-published-date="2">
+                  <div class="mix Dessert all catalog-item" data-order="200" data-published-date="2">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
                         <img src="src/images/catalog-item-1.svg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">150 гр. <span>300 ккал.</span></div>
+                      <h3 class="catalog-item__name">Зефір <span>200 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -228,13 +228,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-b catalog-item" data-order="2" data-published-date="5">
+                  <div class="mix Dessert all catalog-item" data-order="250" data-published-date="5">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
                         <img src="src/images/catalog-item-2.svg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">300 гр. <span>700 ккал.</span></div>
+                      <h3 class="catalog-item__name">Тортик <span>250 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -242,13 +242,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-b catalog-item" data-order="3" data-published-date="8">
+                  <div class="mix Salad all catalog-item" data-order="280" data-published-date="8">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-3.svg" alt="">
+                        <img src="src/images/salad-one.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">200 гр. <span>420 ккал.</span></div>
+                      <h3 class="catalog-item__name">Салат Цезар <span>280 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -256,13 +256,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-c catalog-item" data-order="4" data-published-date="1">
+                  <div class="mix HotDish all catalog-item" data-order="600" data-published-date="1">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-4.svg" alt="">
+                        <img src="src/images/HotDish-one.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">600 гр. <span>800 ккал.</span></div>
+                      <h3 class="catalog-item__name">Стейк <span>600 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -270,13 +270,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-a catalog-item" data-order="5" data-published-date="2">
+                  <div class="mix Salad all catalog-item" data-order="240" data-published-date="2">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-5.svg" alt="">
+                        <img src="src/images/salad-two.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">400 гр. <span>400 ккал.</span></div>
+                      <h3 class="catalog-item__name">Салат <span>240 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -284,13 +284,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-b catalog-item" data-order="6" data-published-date="2">
+                  <div class="mix HotDish all catalog-item" data-order="950" data-published-date="2">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-6.svg" alt="">
+                        <img src="src/images/HotDish-two.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">1400 гр. <span>1100 ккал.</span></div>
+                      <h3 class="catalog-item__name">Рулька <span>950 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -298,13 +298,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-c catalog-item" data-order="7" data-published-date="7">
+                  <div class="mix coofeeOrTea all catalog-item" data-order="80" data-published-date="7">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
+                        <img src="src/images/coffeOrTea-one.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">250 гр. <span>200 ккал.</span></div>
+                      <h3 class="catalog-item__name">Кава <span>80 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -312,13 +312,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-a catalog-item" data-order="8" data-published-date="2">
+                  <div class="mix coofeeOrTea all catalog-item" data-order="100" data-published-date="2">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
+                        <img src="src/images/coffeOrTea-two.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">450 гр. <span>100 ккал.</span></div>
+                      <h3 class="catalog-item__name">Чай <span>100 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -326,13 +326,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-c catalog-item" data-order="9" data-published-date="2">
+                  <div class="mix ColdDrinks all catalog-item" data-order="110" data-published-date="2">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
+                        <img src="src/images/coldDrinks-one.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">450 гр. <span>210 ккал.</span></div>
+                      <h3 class="catalog-item__name">Лимонад <span>110 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -340,13 +340,13 @@
                     </div>
                   </div>
 
-                  <div class="mix category-a catalog-item" data-order="10" data-published-date="1">
+                  <div class="mix ColdDrinks all catalog-item" data-order="110" data-published-date="1">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
+                        <img src="src/images/coldDrinks-two.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">450 гр. <span>210 ккал.</span></div>
+                      <h3 class="catalog-item__name">Лимонад <span>110 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -354,13 +354,13 @@
                     </div>
                   </div>
  
-                  <div class="mix category-b catalog-item" data-order="11" data-published-date="9">
+                  <div class="mix Sandwich all catalog-item" data-order="320" data-published-date="9">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
+                        <img src="src/images/salad-one.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">330 гр. <span>400 ккал.</span></div>
+                      <h3 class="catalog-item__name">Сендвіч <span>320 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
@@ -368,132 +368,19 @@
                     </div>
                   </div>
 
-                  <div class="mix category-a catalog-item" data-order="12" data-published-date="5">
+                  <div class="mix Sandwich all catalog-item" data-order="380" data-published-date="5">
                     <div class="catalog-item__content">
                       <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
+                        <img src="src/images/salad-two.jpg" alt="">
                       </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
+                      <div class="catalog-item__weight">400 гр. <span>570 ккал.</span></div>
+                      <h3 class="catalog-item__name">Сендвіч <span>380 <span>₴</span> </span></h3>
                       <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
                     </div>
                     <div class="catalog-item__basket-box">
                       <button class="catalog-item__basket" type="button">В корзину</button>
                     </div>
                   </div>
-
-                  <div class="mix category-c catalog-item" data-order="13" data-published-date="3">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-a catalog-item" data-order="14" data-published-date="6">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-b catalog-item" data-order="15" data-published-date="4">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-b catalog-item" data-order="16" data-published-date="1">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-b catalog-item" data-order="17" data-published-date="5">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-b catalog-item" data-order="18" data-published-date="2">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-b catalog-item catalog-mobile-delate" data-order="19" data-published-date="1">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div>
-
-                  <div class="mix category-c catalog-item catalog-mobile-delate" data-order="20" data-published-date="1">
-                    <div class="catalog-item__content">
-                      <div class="catalog-item__img">
-                        <img src="src/images/catalog-item-1.png" alt="">
-                      </div>
-                      <div class="catalog-item__weight">200 гр. <span>500 ккал.</span></div>
-                      <h3 class="catalog-item__name">Тортик <span>300 <span>₴</span> </span></h3>
-                      <div class="catalog-item__description">Дзеркало синхронізує міжатомний магніт.</div>
-                    </div>
-                    <div class="catalog-item__basket-box">
-                      <button class="catalog-item__basket" type="button">В корзину</button>
-                    </div>
-                  </div> 
-
                 </div>
               </div>
             </section>
@@ -530,32 +417,32 @@
           <div class="mobile-box__item">
             <div class="mobile-box__title">Літнє меню</div>
             <ul class="mobile-box__list">
-              <li class="mobile-box__list-item link-js" data-filter=".category-c" data-key="coofeeOrTea">
+              <li class="mobile-box__list-item link-js" data-filter=".coofeeOrTea" data-key="coofeeOrTea">
                 Кава та чай
               </li>
-              <li class="mobile-box__list-item link-js" data-filter=".category-a" data-key="ColdDrinks">
+              <li class="mobile-box__list-item link-js" data-filter=".ColdDrinks" data-key="ColdDrinks">
                 Прохолодні напої
               </li>
-              <li class="mobile-box__list-item link-js" data-filter=".category-b" data-key="Combo">
-                Конструктор сніданків
+              <li class="mobile-box__list-item link-js" data-filter=".HotDish" data-key="HotDish">
+                Гарячі страви
               </li>
-              <li class="mobile-box__list-item link-js" data-filter=".category-a" data-key="coofeeOrTea">
+              <li class="mobile-box__list-item link-js" data-filter=".Sandwich" data-key="Sandwich">
+                Сендвічі
+              </li>
+              <li class="mobile-box__list-item link-js" data-filter="ColdDrinks" data-key="ColdDrinks">
+                Прохолодні напої
+              </li>
+              <li class="mobile-box__list-item link-js" data-filter=".Salad" data-key="Salad">
+                Салати
+              </li>
+              <li class="mobile-box__list-item link-js" data-filter=".coofeeOrTea" data-key="coofeeOrTea">
                 Кава та чай
               </li>
-              <li class="mobile-box__list-item link-js" data-filter="all" data-key="ColdDrinks">
+              <li class="mobile-box__list-item link-js" data-filter=".ColdDrinks" data-key="ColdDrinks">
                 Прохолодні напої
               </li>
-              <li class="mobile-box__list-item link-js" data-filter=".category-a" data-key="ConstructorSnidankov">
-                Конструктор сніданків
-              </li>
-              <li class="mobile-box__list-item link-js" data-filter=".category-b" data-key="coofeeOrTea">
-                Кава та чай
-              </li>
-              <li class="mobile-box__list-item link-js" data-filter=".category-a" data-key="ColdDrinks">
-                Прохолодні напої
-              </li>
-              <li class="mobile-box__list-item link-js " data-filter=".category-c" data-key="ConstructorSnidankov">
-                Конструктор сніданків
+              <li class="mobile-box__list-item link-js " data-filter="all" data-key="all">
+                Весь каталог
               </li>
             </ul>
           </div>
