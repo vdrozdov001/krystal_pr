@@ -58,9 +58,9 @@ new Swiper('.swiper-container', {
   spaceBetween: '20', 
   loop: true,
   initialSlide: 2,
-  // autoplay: { 
-  //   delay: 3000,
-  // },
+  autoplay: { 
+    delay: 3000,
+  },
   speed: 600,
 });
 
