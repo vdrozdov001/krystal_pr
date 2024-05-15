@@ -5,7 +5,7 @@
     padding: 30px
     max-width: 895px
     width: 100%
-    min-height: 1710px
+    min-height: 1061px
     &__header 
         display: flex 
         justify-content: space-between
@@ -154,11 +154,14 @@
                 height: 155px
 
 @media (max-width: 600px)
+    .catalog 
+        min-height: 0px
     .catalog-item 
         width: 45%
 
 @media (max-width: 500px)
     .catalog-item 
+        max-height: 335px
         &__name 
             padding-bottom: 10px
         &:nth-child(19) 
@@ -169,13 +172,16 @@
             opacity: 0
             width: 0px
             height: 0px
+        &__description 
+            padding-bottom: 45px
+            margin-top: 0px
     
 
             
 @media (max-width: 390px) 
     .catalog-item 
         width: 96%
-        max-height: 335px
+        max-height: 355px
         &__img 
             display: flex 
             justify-content: center
@@ -183,6 +189,8 @@
             img 
                 max-width: 80%
                 height: 185px
+        &__name 
+            padding-bottom: 5px
 
 @media (hover: none) 
     .catalog-item

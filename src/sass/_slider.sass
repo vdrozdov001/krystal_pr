@@ -9,6 +9,10 @@
     max-width: 1200px
     margin: auto
     border-radius: 16px
+    background-image: url(/src/images/slider-decor.png)
+    background-repeat: no-repeat
+    background-position: center  right 
+    background-size: 230px 300px
     &__content 
         padding: 59px 0px 0px 47px
         background-image: url(/src/images/slider-content-decor.svg)
@@ -87,9 +91,15 @@
 
 @media (max-width: 800px)
     .slider-item 
+        min-height: 300px
+        display: flex
+        background-size: 160px 180px
+        background-position: top
         &__content
             padding: 18px
-            background-image: url(/src/images/slider-mobile-content-decor.svg)
+            background-image: none
+            margin-top: auto
         &__description 
             font-size: 12px
             margin-top: 24px
+            padding-bottom: 30px
